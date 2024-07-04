@@ -11,7 +11,7 @@ public class Card {
     }
 
     public String toString(){
-        return value + " " + type + "\n";
+        return value + " " + type ;
     }
     public int getValue() {
         return value;

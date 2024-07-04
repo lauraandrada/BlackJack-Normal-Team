@@ -18,7 +18,7 @@ public class Deck {
             }
         }
         Collections.shuffle(deck);
-        System.out.println(deck.toString());
+//        System.out.println(deck.toString());
     }
 
     public Card removeCardFromDeck(Deck deck){

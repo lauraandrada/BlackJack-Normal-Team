@@ -6,20 +6,52 @@ public class Player {
     private List<Card> hand;
     private int credit;
 
-    public Player(String name){
+    public Player(String name) {
         this.name = name;
         this.hand = new ArrayList<>();
         this.credit = 500;
-        
+
     }
 
-    public void addToHand(Card card){
+    public String getName() {
+        return name;
+    }
+
+    public void addToHand(Card card) {
         this.hand.add(card);
 
     }
 
-    public void checkHand(int i){
-        System.out.println(this.hand.get(i));
+    public void checkHand() {
+        if (name.equals("Dealer") && hand.size() <3) {
+            System.out.println(name + " 's cards are " + hand.get(0) + " ?");
+        }else
+        System.out.println(name + " 's cards are " + this.hand + " sum of " + getSum());
+    }
+
+
+    public int getSum() {
+
+        int sum = 0;
+
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i).getValue() > 11) {
+                sum += 10;
+            } else sum += hand.get(i).getValue();
+        }
+
+        sum = checkForAcesReturnSum(sum);
+//        System.out.println("Suma va fi: " + sum);
+        return sum;
+    }
+
+    public int checkForAcesReturnSum(int sum) {
+        for (int i = 0; i < hand.size(); i++) {
+            if (hand.get(i).getValue() == 11 && sum > 21) {
+                sum -= 10;
+            }
+        }
+        return sum;
     }
 
 }
