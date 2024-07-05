@@ -2,8 +2,7 @@ public class Card {
     private int value;
     private String type;
     
-    // private int[] cards = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-    // private String[] type = {"trefla", "romb", "inima", ""};
+
 
     public Card(int value, String type){
         this.value = value;

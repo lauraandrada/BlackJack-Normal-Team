@@ -14,11 +14,9 @@ public class Deck {
         for (int i = 0; i < types.length; i++) {
             for (int j = 0; j < cards.length; j++) {
                 deck.add(new Card(cards[j], types[i]));
-                // System.out.println(deck.get(j).toString());
             }
         }
         Collections.shuffle(deck);
-//        System.out.println(deck.toString());
     }
 
     public Card removeCardFromDeck(Deck deck){

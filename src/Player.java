@@ -4,13 +4,21 @@ import java.util.List;
 public class Player {
     private String name;
     private List<Card> hand;
-    private int credit;
+    private int credit ;
 
     public Player(String name) {
         this.name = name;
         this.hand = new ArrayList<>();
-        this.credit = 500;
+        this.credit = 600;
 
+    }
+
+    public int getCredit() {
+        return credit;
+    }
+
+    public void setCredit(int credit) {
+        this.credit  += credit;
     }
 
     public String getName() {
