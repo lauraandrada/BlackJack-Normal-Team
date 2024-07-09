@@ -1,10 +1,10 @@
 package client;
 
-import utils.Player;
+import client.panels.ActionPanel;
+import client.panels.TopPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.IOException;
 
 
 public class Gui extends JFrame {
