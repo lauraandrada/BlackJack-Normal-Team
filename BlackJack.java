@@ -19,7 +19,7 @@ public class BlackJack {
 
 
     private void dealCards(Player player) {
-        player.addToHand(deck.removeCardFromDeck(deck));
+        player.addToHand(deck.removeCardFromDeck());
     }
 
 

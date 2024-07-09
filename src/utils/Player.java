@@ -12,8 +12,8 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
-        this.hand = new ArrayList<>();
-        this.credit = 600;
+        this.hand = new ArrayList<Card>();
+        this.credit = 1000;
 
     }
 
@@ -21,9 +21,10 @@ public class Player {
         return credit;
     }
 
-    public void setCredit(int credit) {
+    public void addCredit(int credit) {
         this.credit  += credit;
     }
+    public void removeCredit(int credit) {this.credit -= credit;}
 
     public String getName() {
         return name;
