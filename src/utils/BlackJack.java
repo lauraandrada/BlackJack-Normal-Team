@@ -1,3 +1,7 @@
+package utils;
+
+import cards.Deck;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -32,10 +36,11 @@ public class BlackJack {
             dealCards(player);
             dealCards(player);
             player.checkHand();
-            player.getSum();
+//            player.getSum();
 
         }
         Scanner scanner = new Scanner(System.in);
+
 
         for (Player player : players) {
             int input;
@@ -59,7 +64,7 @@ public class BlackJack {
             }
         }
         for (int i = 0; i < 3; i++) {
-            if (players.get(i).getSum() > dealer.getSum() && players.get(i).getSum() < 22 && dealer.getSum() < 22) {
+            if (players.get(i).getSum() > dealer.getSum() && players.get(i).getSum() < 22 && dealer.getSum() < 22) {//verifica pt <21
                 players.get(i).setCredit(100);
                 dealer.setCredit(-100);
                 System.out.println(players.get(i).getName() + " a castigat!" + "cu valoarea " + players.get(i).getSum() + " are credit: " + players.get(i).getCredit());
@@ -69,18 +74,12 @@ public class BlackJack {
                 System.out.println("Dealerul a castigat cu " + dealer.getSum() + " impotriva lui " + players.get(i).getName() + " are credit: " + dealer.getCredit());
 
 
-            } else if (dealer.getSum() > 22 && players.get(i).getSum() <= 21) {
+            } else if (dealer.getSum() > 21 && players.get(i).getSum() <= 21) {
                 players.get(i).setCredit(100);
                 dealer.setCredit(-100);
                 System.out.println(players.get(i).getName() + " a castigat!" + "cu valoarea " + players.get(i).getSum() + " are credit: " + players.get(i).getCredit());
             }
         }
-        // Dealer va da hit pana cand sumDealer > sumAndrei // sumDealer >21
-
-//        andrei.getSum();
-
-
     }
-
 }
 

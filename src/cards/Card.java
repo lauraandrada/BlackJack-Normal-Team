@@ -1,3 +1,5 @@
+package cards;
+
 public class Card {
     private int value;
     private String type;
@@ -15,14 +17,9 @@ public class Card {
     public int getValue() {
         return value;
     }
-    public void setValue(int value) {
-        this.value = value;
-    }
+
     public String getType() {
         return type;
-    }
-    public void setType(String type) {
-        this.type = type;
     }
 }
 

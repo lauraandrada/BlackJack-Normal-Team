@@ -1,12 +1,13 @@
+package cards;
+
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
 public class Deck {
     public List<Card> deck = new ArrayList<>();
     private int[] cards = {2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14};
-    private String[] types = {"trefla", "romb", "Inima", "Neagra"};
+    private String[] types = {"♣️", "🔷", "❤️", "🖤"};
 
 
     public void initializeDeck(){

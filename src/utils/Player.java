@@ -1,3 +1,7 @@
+package utils;
+
+import cards.Card;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -49,7 +53,6 @@ public class Player {
         }
 
         sum = checkForAcesReturnSum(sum);
-//        System.out.println("Suma va fi: " + sum);
         return sum;
     }
 
