@@ -38,8 +38,8 @@ public class Gui extends JFrame {
         super("BlackJack");
         where = new ArrayList<>();
         where.add("NORTH");
-        where.add("SOUTH");
         where.add("EAST");
+        where.add("SOUTH");
         where.add("WEST");
 
         this.dealer = new Player("Dealer");
