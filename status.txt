@@ -1,0 +1,39 @@
+Gui:
+    - Done:
+        - Top Panel (username, IP:PORT, connectBtn (and functionality)
+        - Action Panel (where the game will run) :
+            - Local player's credits text field)
+            - Dealer by default (Cards, TotalScore)
+            - LocalPlayer (Cards TotalScore)
+            - Bet input field, betBtn
+            - Add cards to screen (the card the player drew)
+        - Message area (just for display)
+        - Message input and sendBtn (just display)
+    - TODO:
+        - Instantiate ActionPanel upon channel entry
+        - Set 5s timer and display it upon user entry to the channel
+        - Add new online player to Action player upon connection
+        - Hit functionality (Send it to the server as well)
+        - Stand functionality (Send it to the server as well) (On stand -> Next Player)
+        - (Optional) Update Online player's bet
+Client:
+    - Done:
+        - Establish connection to the server
+        - Send message to the server
+        - Send Player object to the server
+        - Send Card object to the server
+        - Get Player or/and Card object from the server
+    - TODO:
+        - Update Gui's ActionPanel based on object received from the server
+        - Update Gui's MessageArea based on messages received
+        - Send Player choice to the Server (Hit/Stand)
+        - (Optional) Send Player's bet to the server
+Server:
+    - Done:
+        - Channel functionality
+        - Sending / Receiving messages from/to clients (based on channel)
+        - Sending / Receiving Objects from/to clients (based on channel)
+    - TODO:
+        - Set Channel max size to 3 (Players) (Except Global)
+        - (Optional) Get / Send Player's bet from/to clients
+        - (Optional) Delete empty channels

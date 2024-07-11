@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import cards.Deck;
 import cards.Card;
+import client.panels.components.PlayersPanel;
 import utils.Player;
 
 public class ActionPanel extends JPanel {
@@ -24,8 +25,8 @@ public class ActionPanel extends JPanel {
                        JButton hitBtn,
                        JButton standBtn) {
         this.setLayout(new BorderLayout());
-
         this.deck = new Deck();
+        deck.initializeDeck();
 
         // Players Panel
         playersPanel = new PlayersPanel();
@@ -78,6 +79,7 @@ public class ActionPanel extends JPanel {
             }
         });
 
+        //TODO - GET COLLECT PLAYER PANEL COMPONENT
         hitBtn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,4 +101,6 @@ public class ActionPanel extends JPanel {
         this.player = player;
         playersPanel.addPlayer(player.getName(), where);
     }
+
+
 }

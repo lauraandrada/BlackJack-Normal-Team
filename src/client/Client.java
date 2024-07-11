@@ -34,6 +34,19 @@ public class Client<T> extends Thread {
         objectsReceived = new ConcurrentHashMap<>();
     }
 
+    private void sendMessage(Player player, String message) {
+        String fullMessage = player.getName() + ": " + message;
+        messageOut.println(fullMessage);
+    }
+
+    private void sendPlayer(Player player) throws IOException {
+        objectOut.writeObject(player);
+    }
+
+    private void sendCard(Card card) throws IOException {
+        objectOut.writeObject(card);
+    }
+
     private void getMessage() {
         try {
             while ((response = messageIn.readLine()) != null) {
@@ -54,7 +67,7 @@ public class Client<T> extends Thread {
                         objectsReceived.putIfAbsent(player, new ArrayList<Card>());
                     }
                 } else if (objectInput.size() == 2) {
-                    if (objectInput.get(0) instanceof Player && objectInput.get(1) instanceof Card) {
+                    if (objectInput.getFirst() instanceof Player && objectInput.getLast() instanceof Card) {
                         card = (Card) objectInput.get(1);
                         objectsReceived.get(player).add(card);
                     }

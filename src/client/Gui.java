@@ -48,7 +48,7 @@ public class Gui extends JFrame {
 
         Image image = null;
         try {
-            image = Toolkit.getDefaultToolkit().getImage("assets/logo/icon.png");
+            image = Toolkit.getDefaultToolkit().getImage("assets/logo/icon.jpg");
         } catch (Exception e) {
             System.err.println("Icon image not found");
         }
@@ -77,6 +77,7 @@ public class Gui extends JFrame {
 
         ActionPanel actionPanel = new ActionPanel(creditsArea, betField, betBtn, hitBtn, standBtn);
         actionPanel.addPlayer(dealer, where.removeFirst());
+
         actionPanel.setVisible(false);
         this.add(actionPanel, BorderLayout.CENTER);
 
