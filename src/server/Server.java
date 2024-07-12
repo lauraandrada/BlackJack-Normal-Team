@@ -112,16 +112,11 @@ public class Server {
             }
         }
 
-        public void broadcastObjects(Player user, Card card, Channel channel) throws IOException {
+        public void broadcastObjects(Object<T> obj, Channel channel) throws IOException {
             List<ClientHandler> handlers = channels.get(channel);
             synchronized (handlers) {
                 for (ClientHandler handler : handlers) {
-                    if (user != null) {
-                        handler.objectOut.writeObject(user);
-                    }
-                    if (card != null) {
-                        handler.objectOut.writeObject(card);
-                    }
+                    // Send the given Object
                 }
             }
         }
@@ -232,7 +227,17 @@ public class Server {
         }
 
         public void handleObjects() throws IOException, ClassNotFoundException {
-            //TODO: Send Objects Array with the proper Type (Cast Player to player, etc)
+            objectToSend;
+            while ((objectToSend = objectIn.readObject()) != null) {
+                if (objectToSend instanceof Player){
+                    objectToSend = getPlayer();
+                }
+                if (objectToSend instanceof Card){
+                    objectToSend = getCard();
+                }
+                broadcastObjects();
+            }
+
         }
 
         public void run() {
